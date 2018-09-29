@@ -2,10 +2,10 @@ create table LoanApplication(Application_Id number primary key,application_date 
 
 create sequence sequence_app_id start with 1 increment by 1;
 
-create table CustomerDetails (Application_Id number references LoanApplication(Application_id),Applicant_name varchar(20),date_of_birth date, marital_status varchar(10), phone_number number, mobile_number number, CountofDependents number, email_ id varchar(20));
+create table CustomerDetails (Application_Id number references LoanApplication(Application_id),Applicant_name varchar(20),date_of_birth date, marital_status varchar(10), phone_number number, mobile_number number, CountofDependents number, email_id varchar(20));
 
 create table LoanProgramsOffered(ProgramName varchar(5), description varchar(20), type varchar(20), durationinyears number, minloanamount number, maxloanamount number, rateofinterest number, proofs_required varchar(20),Constraint check_type check(type in ('Purchase','Construction','Extension','Renovation')))
 
 create table ApprovedLoans( Application_Id number references LoanApplication(Application_id) , Customer_name varchar(20),amountofloangranted number, monthlyinstallment number, yearstimeperiod number, downpayment number, rateofinterest number, totalamountpayable number);
 
- create table Users ( login_id varchar(5), password varchar(10), role varchar(5),Constraint check_role check(role in ('admin','lad')));
+ create table EndUsers ( login_id varchar(5), password varchar(10), role varchar(5),Constraint check_role check(role in ('admin','lad')));
