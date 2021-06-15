@@ -1,1 +1,1 @@
-# table-structure
+# table-structure-for-loan-project
